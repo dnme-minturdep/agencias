@@ -54,6 +54,10 @@ dashboardPage(
                              icon = icon("car fa-xl", verify_fa = FALSE), width = 4, color = "olive")
                 ),
                 
+                br(),
+                
+               h4("*Datos actualizados a marzo 2022, en base a información de la Dirección Nacional de Agencias de Viaje.")
+                
             ),
             
             tabItem(
