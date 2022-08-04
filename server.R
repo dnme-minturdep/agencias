@@ -306,4 +306,6 @@ function(input, output) {
                theme_minimal())
   })
   
+  waiter_hide()
+  
 }

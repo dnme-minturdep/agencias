@@ -8,7 +8,8 @@ library(sf)
 library(leaflet)
 library(htmlwidgets)
 library(plotly)
-
+library(waiter)
+library(shinyjs)
 
 base_agencias <- readRDS("/srv/DataDNMYE/agencias/rlm/base_agencias.rds")
 
@@ -53,3 +54,8 @@ missing_prov <- format(as.double(round(base_agencias %>%
   summarise(porc = sum(n)/nrow(base_agencias)*100),1)), decimal.mark=",")
 
 options(DT.options = list(language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')))
+
+loading_screen <- tagList(
+  h3("Cargando...", style = "color:gray;"),
+  img(src = "https://tableros.yvera.tur.ar/recursos/logo_mintur_color.png", height = "200px")
+)

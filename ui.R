@@ -17,6 +17,10 @@ dashboardPage(
     ),
     
     dashboardBody(
+        useWaiter(),
+        waiter_show_on_load(html = loading_screen, color = "white"),
+        useShinyjs(),
+        
         tags$head(
             # Include our custom CSS
             includeCSS("styles.css")
@@ -80,9 +84,9 @@ dashboardPage(
                     
                     column(width = 6,
                            column(width = 12,
-                                  box(width = NULL, status = "success", solidHeader = TRUE,
+                                  box(width = NULL, status = "primary", solidHeader = TRUE,
                                       title = "CANTIDAD DE MERCADOS QUE OPERAN", plotlyOutput("graph_mercados_n", height = 200)),
-                                  box(width = NULL, status = "success", solidHeader = TRUE,
+                                  box(width = NULL, status = "primary", solidHeader = TRUE,
                                       title = "AGENCIAS QUE OPERAN UN ÚNICO MERCADO", plotlyOutput("graph_mercados_unicos", height = 230)
                                   )
                            )
