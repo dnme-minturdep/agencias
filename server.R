@@ -9,7 +9,9 @@ function(input, output) {
     
     datatable(extensions = 'Buttons',
               options = list(dom = 'ftp', pageLength = 12, scrollX = T , autoWidth = T),
-              rownames = FALSE,
+              rownames = FALSE, caption = htmltools::tags$caption(
+                style = 'caption-side: bottom;',
+                'Nota: ', htmltools::em(paste0("no se pudo asignar provincia a un ", missing_prov,"% de las agencias debido a la falta de información en los registros, por esto el número de agencias totales no equivale a la suma por provincias."))),
               
               tabla %>% 
                 st_set_geometry(NULL) %>% 
@@ -233,7 +235,7 @@ function(input, output) {
                       destinos = fct_reorder(destinos, n)) %>% 
                rename(Destino = destinos, Cantidad = n) %>% 
                ggplot() +
-               geom_col(aes(Destino, Cantidad), fill = dnmye_colores("azul verde")) +
+               geom_col(aes(Destino, Cantidad), fill = dnmye_colores("purpura")) +
                labs(x = "", y = "") +
                coord_flip() +
                theme(text = element_text(size = 20)) +
@@ -254,7 +256,7 @@ function(input, output) {
       rename(Cantidad = n,
              Categoria = name) %>% 
       ggplot() +
-      geom_col(aes(Categoria, Cantidad), fill = dnmye_colores("purpura")) +
+      geom_col(aes(Categoria, Cantidad), fill = dnmye_colores("rosa")) +
       labs(x = "", y = "") +
       theme(text = element_text(size = 20)) +
       theme_minimal())

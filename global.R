@@ -4,7 +4,6 @@ library(tidyverse)
 library(herramientas)
 library(comunicacion)
 library(DT)
-library(treemap)
 library(sf)
 library(leaflet)
 library(htmlwidgets)
@@ -48,5 +47,9 @@ interno <- base_agencias %>%
   filter(interno_tipo_de_turismo == "Si") %>% 
   pull(n)
 
+missing_prov <- format(as.double(round(base_agencias %>% 
+  count(provincia) %>% 
+  filter(provincia %in% c("otro lugar", "sin informacion", NA)) %>% 
+  summarise(porc = sum(n)/nrow(base_agencias)*100),1)), decimal.mark=",")
 
 options(DT.options = list(language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')))
