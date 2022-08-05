@@ -2,7 +2,7 @@
 
 ## Descripción :speech_balloon:
 
-**Repositorio que contiene el código del tablero de consultas del Agencias de viaje.**
+**Repositorio que contiene el código del tablero de consultas de Agencias de viaje.**
 
 :globe_with_meridians: Publicado en: **https://tableros.yvera.tur.ar/agencias**
 
