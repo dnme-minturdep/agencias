@@ -42,15 +42,22 @@
   border-top-color: white;
 }
 
-/* Value boxes */
-.small-box {
-  height: 150%;
+/* Value boxes  */
+.small-box.bg-olive {
+  height: 350px;
   font-family: 'Encode Sans Normal', Helvetica;
 }
 
-/*.small-box.bg-red {
- background-color: #37BBED !important; 
-}*/
+.small-box.bg-light-blue {
+  height: 350px;
+  font-family: 'Encode Sans Normal', Helvetica;
+}
+
+.small-box.bg-red {
+  height: 100px;
+  background-color: #3D9970 !important;
+  font-family: 'Encode Sans Normal', Helvetica;
+}
 
 /* logo */
 .skin-blue .main-header .logo {

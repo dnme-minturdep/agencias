@@ -34,17 +34,15 @@ estudiantil <- base_agencias %>%
   pull(n)
 
 receptivo <- base_agencias %>%
-  count(receptivo,emisivo,interno_tipo_de_turismo) %>% 
+  count(receptivo,emisivo) %>% 
   filter(receptivo == "Si",
-         emisivo == "No",
-         interno_tipo_de_turismo == "No") %>% 
+         emisivo == "No") %>% 
   pull(n)
 
 emisivo <- base_agencias %>%
-  count(receptivo,emisivo,interno_tipo_de_turismo) %>% 
+  count(receptivo,emisivo) %>% 
   filter(receptivo == "No",
-         emisivo == "Si",
-         interno_tipo_de_turismo == "No") %>% 
+         emisivo == "Si") %>% 
   pull(n)
 
 interno <- base_agencias %>%
@@ -58,6 +56,8 @@ receptivo_emisivo <- base_agencias %>%
          emisivo == "Si") %>% 
   pull(n)
 
+internacional <- emisivo + receptivo + receptivo_emisivo
+
 missing_prov <- format(as.double(round(base_agencias %>% 
   count(provincia) %>% 
   filter(provincia %in% c("otro lugar", "sin informacion", NA)) %>% 
@@ -69,7 +69,3 @@ loading_screen <- tagList(
   h3("Cargando...", style = "color:gray;"),
   img(src = "https://tableros.yvera.tur.ar/recursos/logo_mintur_color.png", height = "200px")
 )
-
-
-base_agencias %>%
-  count(receptivo, emisivo, interno_tipo_de_turismo)

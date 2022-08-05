@@ -31,37 +31,45 @@ dashboardPage(
                 tabName = "summary",
                 
                 fluidRow(
-                    valueBox(tags$p(style = "font-size: 300%;", as.integer(nrow(base_agencias))),
+                    valueBox(tags$p(style = "font-size: 200%;", as.integer(nrow(base_agencias))),
                              tags$p(style = "font-size: 180%;", "AGENCIAS DE VIAJE EN EL PAÍS"), 
-                                 icon = icon("van-shuttle fa-xl", verify_fa = FALSE), width = 12, color = "purple")),
+                                 icon = icon("van-shuttle fa-xl", verify_fa = FALSE), width = 8, color = "purple"),
+                    
+                    valueBox(tags$p(style = "font-size: 200%;", estudiantil), 
+                             tags$p(style = "font-size: 180%;","TURISMO ESTUDIANTIL"), 
+                             icon = icon("school fa-xl", verify_fa = FALSE), width = 4, color = "blue")
+                    ),
                     
                 fluidRow(
-                    valueBox(tags$p(style = "font-size: 300%;", interno), 
-                             tags$p(style = "font-size: 180%;","AGENCIAS DE TURISMO INTERNO"), 
-                             icon = icon("car fa-xl", verify_fa = FALSE), width = 6, color = "light-blue"),
+                    valueBox(tags$p(style = "font-size: 150%;", interno), 
+                             tags$p(style = "font-size: 150%;","TURISMO INTERNO"), 
+                             icon = icon("car fa-lg", verify_fa = FALSE), width = 4, color = "light-blue"),
                     
-                    valueBox(tags$p(style = "font-size: 300%;", estudiantil), 
-                             tags$p(style = "font-size: 180%;","AGENCIAS DE TURISMO ESTUDIANTIL"), 
-                             icon = icon("school fa-xl", verify_fa = FALSE), width = 6, color = "light-blue")
-                        ),
+                    valueBox(tags$p(style = "font-size: 150%;", internacional), 
+                             tags$p(style = "font-size: 150%;","TURISMO INTERNACIONAL"), 
+                             icon = icon("globe fa-lg", verify_fa = FALSE), width = 4, color = "olive"),
+                    
+                    column(width = 4,
+                           column(width = 12,
+                                  valueBox(tags$p(style = "font-size: 90%;", receptivo),
+                                           tags$p(style = "font-size: 120%;", "RECEPTIVAS"), 
+                                           icon = icon("plane-arrival fa-sm", verify_fa = FALSE), width = NULL, color = "red"),
+                                  
+                                  valueBox(tags$p(style = "font-size: 90%;", emisivo), 
+                                           tags$p(style = "font-size: 120%;","EMISIVAS"), 
+                                           icon = icon("plane-departure fa-sm", verify_fa = FALSE), width = NULL, color = "red"),
+                                  
+                                  valueBox(tags$p(style = "font-size: 90%;", receptivo_emisivo), 
+                                           tags$p(style = "font-size: 120%;","RECEPTIVAS-EMISIVAS"), 
+                                           icon = icon("plane fa-sm", verify_fa = FALSE), width = NULL, color = "red")
+                                  )
+                           )
+                        
+                    ),
                 
                 fluidRow(
-                    valueBox(tags$p(style = "font-size: 200%;", receptivo),
-                             tags$p(style = "font-size: 140%;", "RECEPTIVAS"), 
-                             icon = icon("plane-arrival fa-xl", verify_fa = FALSE), width = 4, color = "olive"),
-                    
-                    valueBox(tags$p(style = "font-size: 200%;", emisivo), 
-                             tags$p(style = "font-size: 140%;","EMISIVAS"), 
-                             icon = icon("plane-departure fa-xl", verify_fa = FALSE), width = 4, color = "olive"),
-                    
-                    valueBox(tags$p(style = "font-size: 200%;", receptivo_emisivo), 
-                             tags$p(style = "font-size: 140%;","RECEPTIVAS-EMISIVAS"), 
-                             icon = icon("globe fa-xl", verify_fa = FALSE), width = 4, color = "olive")
-                ),
-                
-                br(),
-                
-               h4(tags$p(tags$b("Nota: "),"datos actualizados a marzo 2022 en base a la Dirección Nacional de Agencias de Viaje."))
+                    box(width = 12, h4(tags$p(tags$b("Nota: "),"datos actualizados a marzo 2022 en base al Registro de Agencias de Viajes de la Dirección Nacional de Agencias de Viajes.")))
+                )
                 
             ),
             

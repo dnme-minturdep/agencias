@@ -19,7 +19,8 @@ function(input, output) {
                 rename(Provincia = provincia, Cantidad = agencias_prov,
                        "% receptivo" = prop_receptivo, "% emisivo" = prop_emisivo,
                        "% interno" = prop_interno)) %>% 
-                formatPercentage(c("% receptivo", "% emisivo", "% interno"), digits = 1)
+                formatPercentage(c("% receptivo", "% emisivo", "% interno"), digits = 1,
+                                 dec.mark = ",")
   )
   
   # MAPA PAÍS
@@ -116,7 +117,8 @@ function(input, output) {
                        "% Resto de América" = prop_resto_de_america,
                        "% Resto del Mundo" = prop_resto_del_mundo,
                        "% Uruguay" = prop_uruguay)) %>% 
-    formatPercentage(c(3:12), digits = 1)
+    formatPercentage(c(3:12), digits = 1,
+                     dec.mark = ",")
   }
   )
   
@@ -161,7 +163,8 @@ function(input, output) {
               rownames = FALSE,
               
               mercados_rec) %>% 
-      formatPercentage(columns = 3, digits = 1)
+      formatPercentage(columns = 3, digits = 1,
+                       dec.mark = ",")
   )
   
   mercados_n <- base_agencias %>% 
