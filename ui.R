@@ -33,7 +33,12 @@ dashboardPage(
                 fluidRow(
                     valueBox(tags$p(style = "font-size: 300%;", as.integer(nrow(base_agencias))),
                              tags$p(style = "font-size: 180%;", "AGENCIAS DE VIAJE EN EL PAÍS"), 
-                                 icon = icon("van-shuttle fa-xl", verify_fa = FALSE), width = 6, color = "purple"),
+                                 icon = icon("van-shuttle fa-xl", verify_fa = FALSE), width = 12, color = "purple")),
+                    
+                fluidRow(
+                    valueBox(tags$p(style = "font-size: 300%;", interno), 
+                             tags$p(style = "font-size: 180%;","AGENCIAS DE TURISMO INTERNO"), 
+                             icon = icon("car fa-xl", verify_fa = FALSE), width = 6, color = "light-blue"),
                     
                     valueBox(tags$p(style = "font-size: 300%;", estudiantil), 
                              tags$p(style = "font-size: 180%;","AGENCIAS DE TURISMO ESTUDIANTIL"), 
@@ -42,21 +47,21 @@ dashboardPage(
                 
                 fluidRow(
                     valueBox(tags$p(style = "font-size: 200%;", receptivo),
-                             tags$p(style = "font-size: 140%;", "AGENCIAS RECEPTIVAS"), 
+                             tags$p(style = "font-size: 140%;", "RECEPTIVAS"), 
                              icon = icon("plane-arrival fa-xl", verify_fa = FALSE), width = 4, color = "olive"),
                     
                     valueBox(tags$p(style = "font-size: 200%;", emisivo), 
-                             tags$p(style = "font-size: 140%;","AGENCIAS EMISIVAS"), 
+                             tags$p(style = "font-size: 140%;","EMISIVAS"), 
                              icon = icon("plane-departure fa-xl", verify_fa = FALSE), width = 4, color = "olive"),
                     
-                    valueBox(tags$p(style = "font-size: 200%;", interno), 
-                             tags$p(style = "font-size: 140%;","AGENCIAS DE TURISMO INTERNO"), 
-                             icon = icon("car fa-xl", verify_fa = FALSE), width = 4, color = "olive")
+                    valueBox(tags$p(style = "font-size: 200%;", receptivo_emisivo), 
+                             tags$p(style = "font-size: 140%;","RECEPTIVAS-EMISIVAS"), 
+                             icon = icon("globe fa-xl", verify_fa = FALSE), width = 4, color = "olive")
                 ),
                 
                 br(),
                 
-               h4("*Datos actualizados a marzo 2022, en base a información de la Dirección Nacional de Agencias de Viaje.")
+               h4(tags$p(tags$b("Nota: "),"datos actualizados a marzo 2022 en base a la Dirección Nacional de Agencias de Viaje."))
                 
             ),
             
@@ -82,16 +87,19 @@ dashboardPage(
                 tabName = "markets",
                 
                 fluidRow(
+                    box(width = 12, tags$p(style = "text-align: center; font-size: 20px;","Información de las agencias que operan con clientes no residentes"))
+                ),
+                fluidRow(
                     box(status = "primary", solidHeader = TRUE,
-                        title = "AGENCIAS RECEPTIVAS POR MERCADO", dataTableOutput("tabla_mercados", height = 520)
+                        title = "AGENCIAS RECEPTIVAS POR REGIÓN", dataTableOutput("tabla_mercados", height = 520)
                     ),
                     
                     column(width = 6,
                            column(width = 12,
                                   box(width = NULL, status = "primary", solidHeader = TRUE,
-                                      title = "CANTIDAD DE MERCADOS QUE OPERAN", plotlyOutput("graph_mercados_n", height = 200)),
+                                      title = "CANTIDAD DE REGIONES QUE OPERAN", plotlyOutput("graph_mercados_n", height = 200)),
                                   box(width = NULL, status = "primary", solidHeader = TRUE,
-                                      title = "AGENCIAS QUE OPERAN UN ÚNICO MERCADO", plotlyOutput("graph_mercados_unicos", height = 230)
+                                      title = "AGENCIAS QUE OPERAN UNA ÚNICA REGIÓN", plotlyOutput("graph_mercados_unicos", height = 230)
                                   )
                            )
                     )

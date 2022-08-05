@@ -152,12 +152,12 @@ function(input, output) {
                               TRUE ~ Tipo)) 
     
     receptivo %>% select(-Aplica) %>% 
-      rename(Mercado = Tipo, Cantidad = n, "%" = porcentaje)
+      rename(Region = Tipo, Cantidad = n, "%" = porcentaje)
   }
   
   # TABLA AGENCIAS POR MERCADO 
   output$tabla_mercados <- renderDataTable(
-    datatable(options = list(dom = 'ftp', pageLength = 12, scrollX = T , autoWidth = F),
+    datatable(options = list(dom = 'f', pageLength = 12, scrollX = T , autoWidth = F),
               rownames = FALSE,
               
               mercados_rec) %>% 
@@ -173,15 +173,15 @@ function(input, output) {
     mutate(mercados = across(.cols = contains("count"), .fns = sum)) %>% 
     group_by(mercados) %>% 
     summarise(Cantidad = n(),
-              Mercados = as.factor(unique(mercados$count))) 
+              Regiones = as.factor(unique(mercados$count))) 
 
   
   # GRAFICO AGENCIAS POR CANTIDAD DE MERCADOS
   output$graph_mercados_n <- renderPlotly(
     ggplotly(mercados_n %>% 
       ggplot() +
-      geom_col(aes(Mercados, Cantidad), fill = dnmye_colores("purpura")) +
-      labs(x = "Cantidad de mercados", y = "") +
+      geom_col(aes(Regiones, Cantidad), fill = dnmye_colores("purpura")) +
+      labs(x = "Cantidad de regiones", y = "") +
       theme(text = element_text(size = 20), 
             axis.title.x = 14) +
       theme_minimal())
