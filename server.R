@@ -159,7 +159,7 @@ function(input, output) {
   
   # TABLA AGENCIAS POR MERCADO 
   output$tabla_mercados <- renderDataTable(
-    datatable(options = list(dom = 'f', pageLength = 12, scrollX = T , autoWidth = F),
+    datatable(options = list(dom = 'ft', pageLength = 12, scrollX = T , autoWidth = F),
               rownames = FALSE,
               
               mercados_rec) %>% 

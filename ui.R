@@ -1,6 +1,6 @@
 dashboardPage(
     
-    dashboardHeader(title = "AGENCIAS DE VIAJE",
+    dashboardHeader(title = "AGENCIAS DE VIAJES", titleWidth = 250,
                     tags$li(a(href = 'https://www.yvera.tur.ar/sinta/',
                               img(src = 'https://tableros.yvera.tur.ar/recursos/logo_sinta.png',
                              height = "30px"),
@@ -32,7 +32,7 @@ dashboardPage(
                 
                 fluidRow(
                     valueBox(tags$p(style = "font-size: 200%;", as.integer(nrow(base_agencias))),
-                             tags$p(style = "font-size: 180%;", "AGENCIAS DE VIAJE EN EL PAÍS"), 
+                             tags$p(style = "font-size: 180%;", "AGENCIAS DE VIAJES EN EL PAÍS"), 
                                  icon = icon("van-shuttle fa-xl", verify_fa = FALSE), width = 8, color = "purple"),
                     
                     valueBox(tags$p(style = "font-size: 200%;", estudiantil), 
