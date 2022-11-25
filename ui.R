@@ -1,5 +1,6 @@
-dashboardPage(
-    
+
+tagList(dashboardPage(
+        
     dashboardHeader(title = "AGENCIAS DE VIAJES", titleWidth = 250,
                     tags$li(a(href = 'https://www.yvera.tur.ar/sinta/',
                               img(src = 'https://tableros.yvera.tur.ar/recursos/logo_sinta.png',
@@ -136,5 +137,7 @@ dashboardPage(
                 
         )
         )
+    ),
+    tags$footer(includeHTML("/srv/shiny-server/recursos/shiny_footer.html"))
     
 )

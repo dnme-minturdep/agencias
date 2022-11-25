@@ -111,3 +111,39 @@
  .skin-blue .box-header {
   font-family: 'Encode Sans Normal', Helvetica;
 }
+
+
+.footer {
+  font-family: 'Encode Sans Normal', Helvetica;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: white;
+  background-color: #37BBED;
+  height: auto;
+  padding: 20px;
+}
+
+#footer-text {
+  color: white;
+  font-style: normal;
+}
+
+.fa-github {
+  color: white;
+}
+
+.fa-robot {
+  color: white;
+}
+
+.col-md-1 {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+} 
+
