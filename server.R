@@ -186,7 +186,7 @@ function(input, output) {
       geom_col(aes(Regiones, Cantidad), fill = "#9283BE") +
       labs(x = "Cantidad de regiones", y = "") +
       theme(text = element_text(size = 20), 
-            axis.title.x = 14) +z
+            axis.title.x = 14) +
       theme_minimal())
   )
   
@@ -259,7 +259,7 @@ function(input, output) {
       rename(Cantidad = n,
              Categoria = name) %>% 
       ggplot() +
-      geom_col(aes(Categoria, Cantidad), fill = "#EE3D8") +
+      geom_col(aes(Categoria, Cantidad), fill = "#EE3D81") +
       labs(x = "", y = "") +
       theme(text = element_text(size = 20)) +
       theme_minimal())
@@ -303,7 +303,7 @@ function(input, output) {
                rename(Cantidad = n,
                       Categoria = Tipo) %>% 
                ggplot() +
-               geom_col(aes(Categoria, Cantidad), fill = "#D7DF23")) +
+               geom_col(aes(Categoria, Cantidad), fill = "#D7DF23") +
                labs(x = "", y = "") +
                theme(text = element_text(size = 20)) +
                theme_minimal())
