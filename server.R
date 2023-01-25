@@ -183,10 +183,10 @@ function(input, output) {
   output$graph_mercados_n <- renderPlotly(
     ggplotly(mercados_n %>% 
       ggplot() +
-      geom_col(aes(Regiones, Cantidad), fill = dnmye_colores("purpura")) +
+      geom_col(aes(Regiones, Cantidad), fill = "#9283BE") +
       labs(x = "Cantidad de regiones", y = "") +
       theme(text = element_text(size = 20), 
-            axis.title.x = 14) +
+            axis.title.x = 14) +z
       theme_minimal())
   )
   
@@ -238,7 +238,7 @@ function(input, output) {
                       destinos = fct_reorder(destinos, n)) %>% 
                rename(Destino = destinos, Cantidad = n) %>% 
                ggplot() +
-               geom_col(aes(Destino, Cantidad), fill = dnmye_colores("purpura")) +
+               geom_col(aes(Destino, Cantidad), fill =  "#9283BE") +
                labs(x = "", y = "") +
                coord_flip() +
                theme(text = element_text(size = 20)) +
@@ -259,7 +259,7 @@ function(input, output) {
       rename(Cantidad = n,
              Categoria = name) %>% 
       ggplot() +
-      geom_col(aes(Categoria, Cantidad), fill = dnmye_colores("rosa")) +
+      geom_col(aes(Categoria, Cantidad), fill = "#EE3D8") +
       labs(x = "", y = "") +
       theme(text = element_text(size = 20)) +
       theme_minimal())
@@ -281,7 +281,7 @@ function(input, output) {
                rename(Cantidad = n,
                       Categoria = Tipo) %>% 
                ggplot() +
-               geom_col(aes(Categoria, Cantidad), fill = dnmye_colores("azul verde")) +
+               geom_col(aes(Categoria, Cantidad), fill = "#50B8B1") +
                labs(x = "", y = "") +
                theme(text = element_text(size = 20)) +
                theme_minimal())
@@ -303,7 +303,7 @@ function(input, output) {
                rename(Cantidad = n,
                       Categoria = Tipo) %>% 
                ggplot() +
-               geom_col(aes(Categoria, Cantidad), fill = dnmye_colores("pera")) +
+               geom_col(aes(Categoria, Cantidad), fill = "#D7DF23")) +
                labs(x = "", y = "") +
                theme(text = element_text(size = 20)) +
                theme_minimal())
