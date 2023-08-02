@@ -69,7 +69,7 @@ tagList(dashboardPage(
                     ),
                 
                 fluidRow(
-                    box(width = 12, h4(tags$p(tags$b("Nota: "),"datos actualizados a marzo 2022 en base al Registro de Agencias de Viajes de la Dirección Nacional de Agencias de Viajes.")))
+                    box(width = 12, h4(tags$p(tags$b("Nota: "),"datos actualizados a marzo 2023 en base al Registro de Agencias de Viajes de la Dirección Nacional de Agencias de Viajes.")))
                 )
                 
             ),
