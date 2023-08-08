@@ -13,7 +13,9 @@ tagList(dashboardPage(
             menuItem(tabName = "summary", "RESUMEN"),
             menuItem(tabName = "provinces", "PROVINCIAS"),
             menuItem(tabName = "markets", "RECEPTIVO"),
-            menuItem(tabName = "students", "TURISMO ESTUDIANTIL")
+            menuItem(tabName = "students", "TURISMO ESTUDIANTIL"),
+            menuItem(tabName = "metodo", "METODOLOGÍA")
+            
         )
     ),
     
@@ -133,6 +135,27 @@ tagList(dashboardPage(
                                   )
                            )
                     )
+                ),
+            
+            tabItem(
+                tabName = "metodo",
+                
+                fluidRow(width = 12,
+                         tabPanel('Metodología', 
+                                  box(width = NULL,status = "primary", solidHeader = TRUE,
+                                      tags$b(style ="text-align: center; font-size: 20px;color:#37BBED;",'Definiciones y conceptos'),
+                                      tags$hr(),
+                                      p(tags$b('AGENCIAS DE VIAJE EN EL PAÍS:'),' Se incluye en el tablero el universo de agencias de viajes registradas ante la Dirección Nacional de Agencias de Viajes.'),
+                                      p(tags$b('AGENCIA DE TURISMO ESTUDIANTIL:'),' Se considera agencia de Turismo Estudiantil a toda aquella agencia que haya obtenido el “CERTIFICADO NACIONAL DE AUTORIZACIÓN PARA AGENCIAS DE TURISMO ESTUDIANTIL” de conformidad con la ley 25.599 de Turismo Estudiantil.'),
+                                      p(tags$b('RECEPTIVAS:'),' Se considera como agencias receptivas a todas aquellas que declaren operar destinos Nacionales.'),
+                                      p(tags$b('EMISIVAS:'),' Se considera como agencias agencias emisoras a todas aquellas que declaren operar destinos Internacionales.'),
+                                      p(tags$b('RECEPTIVAS - EMISIVAS:'),' Agencias que operan con ambas modalidades.'),
+                                      p(tags$b('TIPO DE AGENCIA - COMERCIALIZADORA:'),' Agencias de Viajes que, únicamente, celebren contratos de turismo estudiantil por sí y por cuenta y orden del Organizador.'),
+                                      p(tags$b('TIPO DE AGENCIA - ORGANIZADORA:'),' Agencias de Viajes que celebren contratos de turismo estudiantil por sí y contraten en forma directa las prestaciones integrantes del paquete turístico.'),
+                                      p(tags$b('VIAJE DE EGRESADOS:'),' Refiere a las actividades turísticas realizadas con el objeto de celebrar la finalización de un nivel educativo o carrera, que son organizadas con la participación de los padres o tutores de los alumnos, con propósito de recreación y esparcimiento, ajenos a la propuesta curricular de las escuelas y sin perjuicio del cumplimiento del mínimo de días de clase dispuesto en el calendario escolar de cada jurisdicción educativa.'),
+                                      p(tags$b('VIAJE DE ESTUDIOS:'),' Refiere a las actividades formativas integradas a la propuesta curricular de las escuelas, que son organizadas y supervisadas por las autoridades y docentes del respectivo establecimiento.'),
+                                      p(tags$b('ORIGEN DE LOS DATOS:'),' Este tablero se realizó en base al Registro Legajo Multipropósito de Agentes de Viaje.')
+                                      )))
                 )
                 
         )
